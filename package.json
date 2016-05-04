@@ -1,0 +1,22 @@
+{
+  "name": "reinforcenode",
+  "version": "1.0.0",
+  "description": "reinforcejs as node modules",
+  "main": "reinforce.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karpathy/reinforcejs.git"
+  },
+  "keywords": [
+    "reinforcejs"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karpathy/reinforcejs/issues"
+  },
+  "homepage": "https://github.com/karpathy/reinforcejs#readme"
+}
