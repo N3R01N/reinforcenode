@@ -1,6 +1,6 @@
 this is a try to modularize the original code from:
-
-  [REINFORCE.js](https://github.com/karpathy/reinforcejs "Titel, der beim Überfahren mit der Maus angezeigt wird")
+## [REINFORCE.js](http://cs.stanford.edu/people/karpathy/reinforcejs/ "REINFORCE.js Demo Page")
+### see also: [Original Github Repo](https://github.com/karpathy/reinforcejs "Github Repo")
 
 
 
