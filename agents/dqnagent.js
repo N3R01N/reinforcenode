@@ -1,7 +1,7 @@
 'use strict';
 const UTILS = require('../reinforceutils.js');
-let R = require('../reinforce.js');
-
+let Graph = require('../reinforcegraph.js');
+console.log('Graph', Graph);
 let DQNAgent = function (env, opt) {
   this.gamma = UTILS.getopt(opt, 'gamma', 0.75); // future reward discount factor
   this.epsilon = UTILS.getopt(opt, 'epsilon', 0.1); // for epsilon-greedy policy
@@ -55,7 +55,7 @@ DQNAgent.prototype = {
     this.net = UTILS.netFromJSON(j.net);
   },
   forwardQ: function (net, s, needsBackprop) {
-    let G = new R.Graph(needsBackprop);
+    let G = new Graph(needsBackprop);
     let a1mat = G.add(G.mul(net.W1, s), net.b1);
     let h1mat = G.tanh(a1mat);
     let a2mat = G.add(G.mul(net.W2, h1mat), net.b2);
@@ -73,7 +73,7 @@ DQNAgent.prototype = {
     } else {
       // greedy wrt Q function
       let amat = this.forwardQ(this.net, s, false);
-      a = R.maxi(amat.w); // returns index of argmax action
+      a = UTILS.maxi(amat.w); // returns index of argmax action
     }
     // shift state memory
     this.s0 = this.s1;
@@ -111,7 +111,7 @@ DQNAgent.prototype = {
     // want: Q(s,a) = r + gamma * max_a' Q(s',a')
     // compute the target Q value
     let tmat = this.forwardQ(this.net, s1, false);
-    let qmax = r0 + this.gamma * tmat.w[R.maxi(tmat.w)];
+    let qmax = r0 + this.gamma * tmat.w[UTILS.maxi(tmat.w)];
     // now predict
     let pred = this.forwardQ(this.net, s0, true);
     let tderror = pred.w[a0] - qmax;

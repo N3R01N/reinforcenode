@@ -276,6 +276,61 @@ let sampleWeighted = function(p) {
   }
   assert(false, 'wtf');
 };
+
+let softmax = (m) => {
+  let out = new Mat(m.n, m.d); // probability volume
+  let maxval = -999999;
+  for (let i = 0, n = m.w.length; i < n; i++) {
+    if (m.w[i] > maxval) {
+      maxval = m.w[i];
+    }
+  }
+  let s = 0.0;
+  for (let i = 0, n = m.w.length; i < n; i++) {
+    out.w[i] = Math.exp(m.w[i] - maxval);
+    s += out.w[i];
+  }
+  for (let i = 0, n = m.w.length; i < n; i++) {
+    out.w[i] /= s;
+  }
+  // no backward pass here needed
+  // since we will use the computed probabilities outside
+  // to set gradients directly on m
+  return out;
+};
+
+let maxi = function (w) {
+  // argmax of array w
+  let maxv = w[0];
+  let maxix = 0;
+  for (let i = 1, n = w.length; i < n; i++) {
+    let v = w[i];
+    if (v > maxv) {
+      maxix = i;
+      maxv = v;
+    }
+  }
+  return maxix;
+};
+
+let samplei = function (w) {
+  // sample argmax from w, assuming w are
+  // probabilities that sum to one
+  let r = randf(0, 1);
+  let x = 0.0;
+  let i = 0;
+  while (true) {
+    x += w[i];
+    if (x > r) {
+      return i;
+    }
+    i++;
+  }
+  return w.length - 1; // pretty sure we should never get here?
+};
+
+
+
 /*
   a module for all the util functions
 **/
@@ -295,5 +350,9 @@ module.exports = {
   getopt: getopt,
   setConst: setConst,
   sampleWeighted: sampleWeighted,
-  randi: randi
+  randi: randi,
+  fillRand: fillRand,
+  maxi: maxi,
+  samplei: samplei,
+  softmax: softmax
 };
