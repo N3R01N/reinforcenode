@@ -1,6 +1,6 @@
 'use strict';
-const UTILS = require('./reinforceutils.js');
-let R = require('./reinforce.js');
+const UTILS = require('../reinforceutils.js');
+let R = require('../reinforce.js');
 
 // Currently buggy implementation, doesnt work
 let DeterministPG = function (env, opt) {

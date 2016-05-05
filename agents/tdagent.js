@@ -1,5 +1,5 @@
 'use strict';
-const UTILS = require('./reinforceutils.js');
+const UTILS = require('../reinforceutils.js');
 // QAgent uses TD (Q-Learning, SARSA)
 // - does not require environment model :)
 // - learns from experience :)

@@ -3,7 +3,7 @@
 const UTILS = require('./reinforceutils.js');
 
 // Transformer definitions
-let Graph = (needsBackprop) => {
+let Graph = function(needsBackprop) {
   if(typeof needsBackprop === 'undefined') { needsBackprop = true; }
   this.needsBackprop = needsBackprop;
 

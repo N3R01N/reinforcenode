@@ -1,7 +1,7 @@
 'use strict'
 
-const UTILS = require('./reinforceutils.js');
-let R = require('./reinforce.js');
+const UTILS = require('../reinforceutils.js');
+let R = require('../reinforce.js');
 
 // DPAgent performs Value Iteration
 // - can also be used for Policy Iteration if you really wanted to

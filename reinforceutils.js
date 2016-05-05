@@ -137,7 +137,7 @@ Mat.prototype = {
   }
 };
 // return Mat but filled with random numbers from gaussian
-var RandMat = (n, d, mu, std) => {
+let RandMat = function(n, d, mu, std) {
   var m = new Mat(n, d);
   fillRandn(m, mu, std);
   //fillRand(m,-std,std); // kind of :P
@@ -268,5 +268,6 @@ module.exports = {
   netFlattenGrads: netFlattenGrads,
   getopt: getopt,
   setConst: setConst,
-  sampleWeighted: sampleWeighted
+  sampleWeighted: sampleWeighted,
+  randi: randi
 };

@@ -1,6 +1,6 @@
 'use strict';
-const UTILS = require('./reinforceutils.js');
-let R = require('./reinforce.js');
+const UTILS = require('../reinforceutils.js');
+let R = require('../reinforce.js');
 // buggy implementation, doesnt work...
 let SimpleReinforceAgent = function (env, opt) {
   this.gamma = UTILS.getopt(opt, 'gamma', 0.5); // future reward discount factor
