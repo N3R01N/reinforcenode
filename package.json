@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karpathy/reinforcejs.git"
+    "url": "git+https://github.com/N3R01N/reinforcenode.git"
   },
   "keywords": [
-    "reinforcejs"
+    "reinforcejs as node / npm modules"
   ],
-  "author": "",
+  "author": "n3r01n",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/karpathy/reinforcejs/issues"
+    "url": "https://github.com/N3R01N/reinforcenode/issues"
   },
-  "homepage": "https://github.com/karpathy/reinforcejs#readme"
+  "homepage": "https://github.com/N3R01N/reinforcenode#readme"
 }
