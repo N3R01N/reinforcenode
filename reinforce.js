@@ -3,6 +3,7 @@ const UTILS = require('./reinforceutils.js');
 
 let Graph = require('./reinforcegraph.js');
 let Solver = require('./reinforcesolver.js');
+let DQNAgent = require('./agents/dqnagent.js');
 
 
 let softmax = (m) => {
@@ -146,12 +147,15 @@ module.exports = {
   maxi: maxi,
   samplei: samplei,
   softmax: softmax,
-
+  UTILS: UTILS,
   forwardLSTM: forwardLSTM,
   initLSTM: initLSTM,
 
   // optimization
   Solver: Solver,
-  Graph: Graph
+  Graph: Graph,
+  //agents for now only one is working
+  DQNAgent: DQNAgent
+
 };
 // END OF RECURRENTJS

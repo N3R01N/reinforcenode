@@ -26,7 +26,10 @@ let lastAction = {
   buy: null,
   sell: null
 };
+
+
 let actions = ['wait', 'buy', 'sell'];
+
 const THRESHHOLD = 2;
 const INVESTMENT = 1;
 

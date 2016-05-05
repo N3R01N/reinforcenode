@@ -1,4 +1,30 @@
 'use strict';
+
+
+/*
+ @return ein objekt mit den klassen Mat und RandMat und helper funktionen
+ {
+   Mat: Mat,
+   RandMat: RandMat,
+   assert: assert,
+   sig: sig,
+   updateMat: updateMat,
+   updateNet: updateNet,
+   copyNet: copyNet,
+   copyMat: copyMat,
+   netToJSON: netToJSON,
+   netFromJSON: netFromJSON,
+   netZeroGrads: netZeroGrads,
+   netFlattenGrads: netFlattenGrads,
+   getopt: getopt,
+   setConst: setConst,
+   sampleWeighted: sampleWeighted,
+   randi: randi
+ }
+*/
+
+
+
 // Utility fun
 let assert = (condition, message) => {
   // from http://stackoverflow.com/questions/15313418/javascript-assert
