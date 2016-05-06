@@ -1,7 +1,6 @@
 'use strict';
 const UTILS = require('../reinforceutils.js');
 let Graph = require('../reinforcegraph.js');
-console.log('Graph', Graph);
 let DQNAgent = function (env, opt) {
   this.gamma = UTILS.getopt(opt, 'gamma', 0.75); // future reward discount factor
   this.epsilon = UTILS.getopt(opt, 'epsilon', 0.1); // for epsilon-greedy policy
