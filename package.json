@@ -1,6 +1,6 @@
 {
   "name": "reinforcenode",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "reinforcejs as node modules",
   "main": "reinforce.js",
   "scripts": {
